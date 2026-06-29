@@ -29,7 +29,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 px-4 pt-4 transition-all duration-300",
-        scrolled && "bg-[#0b0b0b]/94 py-2 shadow-2xl shadow-black/40 backdrop-blur-2xl",
+        (scrolled || open) && "bg-[#0b0b0b]/94 py-2 shadow-2xl shadow-black/40 backdrop-blur-2xl",
       )}
     >
       <div className="section-shell flex items-center gap-3 sm:gap-4">
@@ -44,7 +44,7 @@ export function Navbar() {
 
         <nav
           className={cn(
-            "flex min-w-0 flex-1 items-center justify-end gap-4 rounded-full border border-white/10 bg-[#0b0b0b]/62 px-4 py-3 backdrop-blur-2xl transition-all duration-300 md:justify-between md:px-6",
+            "ml-auto flex min-w-0 items-center justify-end rounded-full border border-white/10 bg-[#0b0b0b]/62 p-1 backdrop-blur-2xl transition-all duration-300 md:flex-1 md:justify-between md:gap-4 md:px-6 md:py-3",
             scrolled && "border-white/15 bg-[#0b0b0b]/86 py-2 shadow-2xl shadow-black/30",
           )}
         >
@@ -71,25 +71,28 @@ export function Navbar() {
         </nav>
       </div>
 
-      {open ? (
-        <div className="section-shell mt-3 rounded-3xl border border-white/10 bg-[#111]/94 p-4 shadow-2xl backdrop-blur-2xl md:hidden">
-          <div className="grid gap-2">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-2xl px-4 py-3 text-sm text-white/75 hover:bg-white/8 hover:text-white"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <ButtonLink href="/iletisim" className="mt-2" onClick={() => setOpen(false)}>
-              Ücretsiz Teklif Al
-            </ButtonLink>
-          </div>
+      <div
+        className={cn(
+          "-mx-4 mt-3 overflow-hidden border-t border-white/10 bg-[#111]/98 px-4 shadow-2xl backdrop-blur-2xl transition-all duration-300 ease-out md:hidden",
+          open ? "max-h-96 translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0",
+        )}
+      >
+        <div className="section-shell grid gap-2 py-4">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-2xl px-4 py-3 text-sm text-white/75 hover:bg-white/8 hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <ButtonLink href="/iletisim" className="mt-2" onClick={() => setOpen(false)}>
+            Ücretsiz Teklif Al
+          </ButtonLink>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }
