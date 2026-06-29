@@ -9,10 +9,10 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden pt-32">
       <div className="absolute inset-0 premium-grid opacity-60" />
-      <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" />
-      <div className="absolute left-[12%] top-44 h-[300px] w-[300px] rounded-full bg-accent/12 blur-[110px]" />
-      <div className="absolute right-[10%] top-72 h-[360px] w-[360px] rounded-full bg-accent/14 blur-[130px]" />
-      <div className="absolute left-[38%] bottom-8 h-[240px] w-[240px] rounded-full bg-accent/10 blur-[100px]" />
+      <div className="absolute left-1/2 top-20 hidden h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px] md:block" />
+      <div className="absolute left-[12%] top-44 hidden h-[300px] w-[300px] rounded-full bg-accent/12 blur-[110px] md:block" />
+      <div className="absolute right-[10%] top-72 hidden h-[360px] w-[360px] rounded-full bg-accent/14 blur-[130px] md:block" />
+      <div className="absolute left-[38%] bottom-8 hidden h-[240px] w-[240px] rounded-full bg-accent/10 blur-[100px] md:block" />
       <div className="noise-overlay absolute inset-0" />
 
       <div className="section-shell relative grid min-h-[calc(100vh-8rem)] items-center gap-12 pb-20 lg:grid-cols-[0.95fr_1.05fr]">

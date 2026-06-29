@@ -14,9 +14,9 @@ const slides = [
  
 ];
 
-function SlideCard({ slide }: { slide: (typeof slides)[number] }) {
+function SlideCard({ slide, isDuplicate = false }: { slide: (typeof slides)[number]; isDuplicate?: boolean }) {
   return (
-    <article className="group relative h-[220px] w-[min(78vw,340px)] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] sm:h-[260px] sm:w-[380px] md:h-[300px] md:w-[440px]">
+    <article className={`group relative h-[220px] w-[min(78vw,340px)] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] sm:h-[260px] sm:w-[380px] md:h-[300px] md:w-[440px] ${isDuplicate ? "hidden md:block" : ""}`}>
       <Image
         src={slide.src}
         alt={slide.title}
@@ -65,7 +65,7 @@ export function PhotoSlider() {
 
         <div className="photo-marquee-track flex w-max gap-4 px-4 md:gap-5">
           {loop.map((slide, index) => (
-            <SlideCard key={`${slide.title}-${index}`} slide={slide} />
+            <SlideCard key={`${slide.title}-${index}`} slide={slide} isDuplicate={index >= slides.length} />
           ))}
         </div>
       </div>

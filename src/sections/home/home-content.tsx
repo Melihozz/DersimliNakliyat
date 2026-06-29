@@ -1,10 +1,12 @@
 import { Building2, CheckCircle2, Map, PackageCheck, Shield, Truck } from "lucide-react";
 import Image from "next/image";
-import { PhotoSlider } from "@/components/animations/photo-slider";
-import { ScrollStory } from "@/components/animations/scroll-story";
-import { StatsCounter } from "@/components/animations/stats-counter";
+import dynamic from "next/dynamic";
 import { ButtonLink } from "@/components/ui/button";
 import { HeroSection } from "@/sections/home/hero";
+
+const PhotoSlider = dynamic(() => import("@/components/animations/photo-slider").then((mod) => mod.PhotoSlider));
+const ScrollStory = dynamic(() => import("@/components/animations/scroll-story").then((mod) => mod.ScrollStory));
+const StatsCounter = dynamic(() => import("@/components/animations/stats-counter").then((mod) => mod.StatsCounter));
 
 const services = [
   { title: "Şehir içi nakliyat", icon: Truck, text: "Aynı gün planlama, kontrollü paketleme ve hasarsız teslim." },

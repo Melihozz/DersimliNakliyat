@@ -6,8 +6,9 @@ import { useEffect } from "react";
 export function SmoothScroll() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileViewport = window.matchMedia("(max-width: 767px), (pointer: coarse)");
 
-    if (reduceMotion.matches) {
+    if (reduceMotion.matches || mobileViewport.matches) {
       return;
     }
 
