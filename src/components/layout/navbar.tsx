@@ -26,10 +26,20 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 px-4 pt-4 transition-all duration-300",
+        scrolled && "border-b border-white/10 bg-[#0b0b0b]/94 py-2 shadow-2xl shadow-black/40 backdrop-blur-2xl",
+      )}
+    >
       <div className="section-shell flex items-center gap-3 sm:gap-4">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
-          <Logo className="h-28 w-auto sm:h-32 md:h-40" />
+          <Logo
+            className={cn(
+              "h-28 w-auto transition-all duration-300 sm:h-32 md:h-40",
+              scrolled && "h-16 sm:h-20 md:h-24",
+            )}
+          />
         </Link>
 
         <nav
