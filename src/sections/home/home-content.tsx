@@ -115,19 +115,6 @@ export function HomeContent() {
         </div>
       </section>
 
-      <section className="section-shell py-10">
-        <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.035] p-8 md:p-12">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-white/38">Referanslar</p>
-          <div className="grid gap-3 md:grid-cols-4">
-            {["Nova", "Arden", "Kent", "Atlas"].map((logo) => (
-              <div key={logo} className="grid h-24 place-items-center rounded-3xl border border-white/10 text-lg font-black tracking-[0.2em] text-white/35">
-                {logo}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-shell py-24">
         <div className="relative overflow-hidden rounded-[2.8rem] border border-accent/25 bg-accent p-8 text-white shadow-[0_0_90px_rgba(255,107,0,0.24)] md:p-14">
           <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-white/25 blur-3xl" />
