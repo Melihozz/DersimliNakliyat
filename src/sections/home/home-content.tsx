@@ -102,7 +102,7 @@ export function HomeContent() {
       <section className="section-shell grid gap-6 py-24 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-accent">Araç Filosu</p>
-          <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">Temiz, güçlü, takip edilebilir.</h2>
+          <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">Temiz güçlü.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {["Panelvan", "Orta kasa", "Uzun yol"].map((truck) => (
